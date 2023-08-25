@@ -8,7 +8,9 @@ const route = require("./routes/routes");
 const app = express();
 
 const allowedOrigins = [
-  `https://bimch-currency.vercel.app`
+   process.env.FRONTEND_URL,
+  `http://localhost:5173`
+
 ]; 
 
 const corsOptions = {
