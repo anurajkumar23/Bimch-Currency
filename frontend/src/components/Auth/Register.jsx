@@ -3,7 +3,7 @@ import { useState } from "react";
 import logo from "../images/logo.jpg";
 import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";
-
+import { url } from "./url";
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,7 +25,7 @@ const Register = () => {
       toast.error("Password Not Match!");
     } else {
       try {
-        await axios.post("https://bimch.onrender.com/api/register", formData, {
+        await axios.post(`${url}/api/register`, formData, {
           withCredentials: true,
         });
         toast.success("Log In Done");

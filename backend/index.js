@@ -4,11 +4,12 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const route = require("./routes/routes");
-// const 
+const PORT = process.env.PORT || 9000;
 const app = express();
 
-const allowedOrigins = ["https://bimch.vercel.app"]; 
-// const allowedOrigins = ["http://localhost:5173"]; 
+const allowedOrigins = [
+  `https://bimch-currency.vercel.app`
+]; 
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -31,6 +32,6 @@ app.use("/api", route);
 dotenv.config();
 require("./database/connectDatabase");
 
-app.listen(process.env.PORT, () => {
-  console.log("⚡[Server] Server Start At Port " + process.env.PORT);
+app.listen(PORT, () => {
+  console.log(`⚡[Server] Server Start At Port ${PORT}`);
 });
