@@ -48,7 +48,7 @@ const route = require("./routes/routes");
 
 const app = express();
 
-const allowedOrigins = ["https://bimch.vercel.app/"];
+const allowedOrigins = ["https://bimch.vercel.app"];
 
 const corsOptions = {
   origin: function (origin, callback) {
