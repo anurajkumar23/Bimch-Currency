@@ -1,13 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors"); // Import the cors package
+const cors = require("cors"); 
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const route = require("./routes/routes");
-
+// const 
 const app = express();
 
-const allowedOrigins = ["https://bimch.vercel.app"]; // Adjust the allowed origins
+const allowedOrigins = ["https://bimch.vercel.app"]; 
+// const allowedOrigins = ["http://localhost:5173"]; 
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -23,8 +24,6 @@ const corsOptions = {
 app.use(cookieParser());
 app.use(bodyParser.json({ limit: "1024mb" }));
 app.use(bodyParser.urlencoded({ limit: "1024mb", extended: true }));
-
-// Use the cors middleware with your configured options
 app.use(cors(corsOptions));
 
 app.use("/api", route);

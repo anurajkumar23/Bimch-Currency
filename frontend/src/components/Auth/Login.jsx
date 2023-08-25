@@ -1,33 +1,32 @@
 import logo from "../images/logo.jpg";
-import {useState} from 'react';
+import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import axios from 'axios';
+import axios from "axios";
+import { url } from "./url";
 
 const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-const [formData, setFormData] = useState({
-  email: "",
-  password: "",
-});
-
-const handleInputChange = (event) => {
-  const { name, value } = event.target;
-  setFormData((prevData) => ({
-    ...prevData,
-    [name]: value,
-  }));
-};
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = async () => {
     try {
-      await axios.post("https://bimch.onrender.com/api/login", formData, {
+      await axios.post(`${url}/api/login`, formData, {
         withCredentials: true,
       });
-      toast.success("Log In Done")
+      toast.success("Log In Done");
     } catch (error) {
       // console.log(error);
       toast.error("error");
-
     }
   };
 

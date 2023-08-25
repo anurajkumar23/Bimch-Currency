@@ -128,6 +128,16 @@ const getAllUser = async (req, res) => {
   }
 };
 
+
+const getUser = async (req, res) => {
+  try {
+    const token = req.userData;
+    res.json(token);
+  } catch (error) {
+    res.status(200).json(error);
+  }
+};
+
 const getActiveUser = async (req, res) => {
   try {
     const users = await User.find({isActiveUser:true});
@@ -159,4 +169,4 @@ const removeMoney = async (req, res) => {
 
 
 
-module.exports = { registerController, loginController, getAllUser , activeUser , deActiveUser , getActiveUser , addMoney, removeMoney};
+module.exports = { registerController, loginController, getAllUser , activeUser , deActiveUser , getActiveUser , addMoney, removeMoney , getUser};
