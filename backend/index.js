@@ -6,6 +6,26 @@ const cokkie = require("cookie-parser");
 const route = require('./routes/routes');
 
 const app = express();
+
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://bimch.vercel.app/",
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 app.use(cokkie());
 app.use(bodyParser.json({ limit: "1024mb" }));
 app.use("/api",route);
