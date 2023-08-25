@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const route = require("./routes/routes");
-const PORT = process.env.PORT || 9000;
+// const 
 const app = express();
 
 const allowedOrigins = [
@@ -32,6 +32,6 @@ app.use("/api", route);
 dotenv.config();
 require("./database/connectDatabase");
 
-app.listen(PORT, () => {
-  console.log(`⚡[Server] Server Start At Port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log("⚡[Server] Server Start At Port " + process.env.PORT);
 });
