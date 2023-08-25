@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Karla:ital,wght@0,300;1,200&family=Montserrat:wght@200;600&family=Poppins:wght@200&family=Roboto:wght@300;400&family=Ubuntu:wght@300;500&family=Work+Sans:wght@300&display=swap');
+
+:root{
+    --mainColor: #0bacc7;
+    --darkColor:#113231;
+}
+
+
+header{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 10000;
+}
+
+nav h2 .link{
+    color: var(--darkColor);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.7rem;
+        z-index: 10000;
+
+}
+
+.link{
+    text-decoration: none;
+}
+.navList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 2.8rem;
+}
+
+.navList .navListItem .link{
+    color: var(--darkColor);
+    transition: 0.3s ease;
+
+}
+.navList .navListItem .link:hover{
+    color: var(--mainColor);
+    transition: 0.3s ease;
+}
+
+.btn{
+    height: 2.7rem;
+    width: 6.5rem;
+    border-radius: 20px;
+    background-color: #6366f1;
+    border: none;
+    transition: 0.3s ease-in;
+    
+}
+.btn:hover{
+    background-color: #4C51BF;
+    transition: 0.3s ease-in;
+
+
+
+}
+
+.link-btn{
+    text-decoration: none;
+    color: #fff;
+    padding: 2px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    
+}
+.icons{
+    display: none;
+}
+
+.brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.brand img{
+    height: 50px;
+}
+
+
+
+
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+
+
+@media(max-width:990px){
+    .icons{
+        display: block;
+    }
+    .navList{
+        display: none;
+
+    }
+    .navListActive{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        flex-direction: column;
+        gap: 4rem;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        right: 0;
+        top: 0; 
+        background: #fff;
+        z-index: 10000;
+    }
+    .open , .close{
+        font-size: 2rem;
+        margin-top: 6px;
+        position: relative;
+        z-index: 10000;
+
+
+    }
+    
+}
