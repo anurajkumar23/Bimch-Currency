@@ -25,7 +25,7 @@ const Register = () => {
       toast.error("Password Not Match!");
     } else {
       try {
-        await axios.post("http://localhost:8080/api/register", formData, {
+        await axios.post("https://bimch.onrender.com/api/register", formData, {
           withCredentials: true,
         });
         toast.success("Log In Done");
