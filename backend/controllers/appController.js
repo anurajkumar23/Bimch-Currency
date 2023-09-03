@@ -56,8 +56,9 @@ const loginController = async (req, res) => {
           expires: expirationDate,
           httpOnly: true,
         };
+        console.log(token)
 
-        res.cookie("access_token", token, options).status(201).json({
+        res.cookie("jwt", token, options).status(201).json({
           msg: "Log In Done !",
           userName: userExist.name,
           token: token,
